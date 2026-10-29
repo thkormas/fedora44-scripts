@@ -3,8 +3,8 @@
 # Αρχείο για την αποθήκευση της ημερομηνίας της τελευταίας ενημέρωσης
 LAST_UPDATE_FILE="$HOME/.last_system_update"
 
-# Ενημέρωση κάθε 3 ημέρες (3 * 24 * 3600)
-UPDATE_INTERVAL_DAYS=3
+# Ενημέρωση κάθε 2 ημέρες (2 * 24 * 3600)
+UPDATE_INTERVAL_DAYS=2
 UPDATE_INTERVAL_SECONDS=$((UPDATE_INTERVAL_DAYS * 24 * 3600))
 
 CURRENT_TIME=$(date +%s)
@@ -23,10 +23,10 @@ case "$LAST_UPDATE" in
     ''|*[!0-9]*) LAST_UPDATE=0 ;;
 esac
 
-# Έλεγχος αν έχουν περάσει 3 ημέρες από την τελευταία ενημέρωση
+# Έλεγχος αν έχουν περάσει 2 ημέρες από την τελευταία ενημέρωση
 if [ $((CURRENT_TIME - LAST_UPDATE)) -ge $UPDATE_INTERVAL_SECONDS ]; then
     echo "=========================================="
-    echo "   Έναρξη τριήμερης ενημέρωσης Fedora      "
+    echo "   Έναρξη διήμερης ενημέρωσης Fedora       "
     echo "=========================================="
     echo ""
 
